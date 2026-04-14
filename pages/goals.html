@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goals | NutritionApp</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="nav-title">NutritionApp</h1>
+        <div class="nav-tabs">
+            <a href="/pages/browse.html" class="nav-tab">Browse</a>
+            <a href="/pages/foodlog.html" class="nav-tab">Food Log</a>
+            <a href="/pages/goals.html" class="nav-tab active">Goals</a>
+        </div>
+        <div class="nav-right">
+            <span id="nav-email" class="nav-email"></span>
+            <button id="logout-btn" class="btn-logout">Logout</button>
+        </div>
+    </nav>
+
+    <main class="page-container">
+        <div class="page-header">
+            <h2>Daily Goals</h2>
+            <p>Set your daily nutrition targets</p>
+        </div>
+
+        <div class="goals-layout">
+            <div class="goals-form-card">
+                <h3>Set Your Targets</h3>
+                <div class="goal-input-group">
+                    <label>Calories (kcal)</label>
+                    <input type="number" id="goal-calories" placeholder="e.g. 2000" min="0" />
+                </div>
+                <div class="goal-input-group">
+                    <label>Protein (g)</label>
+                    <input type="number" id="goal-protein" placeholder="e.g. 150" min="0" />
+                </div>
+                <div class="goal-input-group">
+                    <label>Carbohydrates (g)</label>
+                    <input type="number" id="goal-carbs" placeholder="e.g. 250" min="0" />
+                </div>
+                <div class="goal-input-group">
+                    <label>Fat (g)</label>
+                    <input type="number" id="goal-fat" placeholder="e.g. 65" min="0" />
+                </div>
+                <button id="save-goals-btn" class="btn-primary">Save Goals</button>
+                <div id="goals-success" class="success-message hidden">Goals saved successfully!</div>
+            </div>
+
+            <div class="goals-preview-card">
+                <h3>Today's Progress</h3>
+                <div id="progress-section">
+                    <div class="progress-item">
+                        <div class="progress-label">
+                            <span>Calories</span>
+                            <span id="progress-calories-text"></span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill calories-fill" id="progress-calories-bar"></div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-label">
+                            <span>Protein</span>
+                            <span id="progress-protein-text"></span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill protein-fill" id="progress-protein-bar"></div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-label">
+                            <span>Carbohydrates</span>
+                            <span id="progress-carbs-text"></span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill carbs-fill" id="progress-carbs-bar"></div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-label">
+                            <span>Fat</span>
+                            <span id="progress-fat-text"></span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill fat-fill" id="progress-fat-bar"></div>
+                        </div>
+                    </div>
+                </div>
+                <p id="no-goals-msg" class="muted-text hidden">Set your goals on the left to see progress.</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/auth.js"></script>
+    <script src="/js/config.js"></script>
+    <script src="/js/goals.js"></script>
+</body>
+</html>

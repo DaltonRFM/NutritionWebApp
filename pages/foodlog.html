@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Log | NutritionApp</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="nav-title">NutritionApp</h1>
+        <div class="nav-tabs">
+            <a href="/pages/browse.html" class="nav-tab">Browse</a>
+            <a href="/pages/foodlog.html" class="nav-tab active">Food Log</a>
+            <a href="/pages/goals.html" class="nav-tab">Goals</a>
+        </div>
+        <div class="nav-right">
+            <span id="nav-email" class="nav-email"></span>
+            <button id="logout-btn" class="btn-logout">Logout</button>
+        </div>
+    </nav>
+
+    <main class="page-container">
+        <div class="page-header">
+            <h2>Food Log</h2>
+            <p id="log-date"></p>
+        </div>
+
+        <div class="foodlog-layout">
+
+            <!-- Add Food Section -->
+            <div class="foodlog-add-card">
+                <h3>Add Food</h3>
+
+                <div class="log-tabs">
+                    <button class="log-tab active" id="tab-search" onclick="switchTab('search')">Search Spoonacular</button>
+                    <button class="log-tab" id="tab-manual" onclick="switchTab('manual')">Enter Manually</button>
+                </div>
+
+                <!-- Spoonacular Search -->
+                <div id="panel-search">
+                    <div class="search-bar" style="margin-bottom: 12px;">
+                        <input type="text" id="food-search-input" placeholder="Search a food or recipe..." />
+                        <button id="food-search-btn" class="btn-search">Search</button>
+                    </div>
+                    <div id="food-search-results" class="food-search-results"></div>
+                </div>
+
+                <!-- Manual Entry -->
+                <div id="panel-manual" class="hidden">
+                    <div class="manual-grid">
+                        <div class="goal-input-group">
+                            <label>Food Name</label>
+                            <input type="text" id="manual-name" placeholder="e.g. Grilled Chicken" />
+                        </div>
+                        <div class="goal-input-group">
+                            <label>Calories (kcal)</label>
+                            <input type="number" id="manual-calories" placeholder="e.g. 300" min="0" />
+                        </div>
+                        <div class="goal-input-group">
+                            <label>Protein (g)</label>
+                            <input type="number" id="manual-protein" placeholder="e.g. 30" min="0" />
+                        </div>
+                        <div class="goal-input-group">
+                            <label>Carbs (g)</label>
+                            <input type="number" id="manual-carbs" placeholder="e.g. 10" min="0" />
+                        </div>
+                        <div class="goal-input-group">
+                            <label>Fat (g)</label>
+                            <input type="number" id="manual-fat" placeholder="e.g. 8" min="0" />
+                        </div>
+                    </div>
+                    <button id="manual-add-btn" class="btn-primary" style="margin-top: 12px;">Add to Log</button>
+                    <div id="manual-error" class="error-banner hidden"></div>
+                </div>
+            </div>
+
+            <!-- Today's Log -->
+            <div class="foodlog-log-card">
+                <div class="log-header-row">
+                    <h3>Today's Log</h3>
+                    <button id="clear-log-btn" class="btn-clear">Clear All</button>
+                </div>
+
+                <div class="totals-bar">
+                    <div class="total-item">
+                        <span class="total-value" id="total-calories">0</span>
+                        <span class="total-label">Calories</span>
+                    </div>
+                    <div class="total-item">
+                        <span class="total-value" id="total-protein">0g</span>
+                        <span class="total-label">Protein</span>
+                    </div>
+                    <div class="total-item">
+                        <span class="total-value" id="total-carbs">0g</span>
+                        <span class="total-label">Carbs</span>
+                    </div>
+                    <div class="total-item">
+                        <span class="total-value" id="total-fat">0g</span>
+                        <span class="total-label">Fat</span>
+                    </div>
+                </div>
+
+                <div id="log-empty" class="muted-text">No food logged yet today.</div>
+                <ul id="log-list" class="log-list"></ul>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="/js/auth.js"></script>
+    <script src="/js/config.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/foodlog.js"></script>
+</body>
+</html>
