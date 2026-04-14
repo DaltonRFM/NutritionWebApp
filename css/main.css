@@ -766,3 +766,132 @@ body {
 .btn-primary:hover {
     background-color: #1f4f3a;
 }
+
+/* ─── CALENDAR PAGE ─── */
+.calendar-layout {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 24px;
+    align-items: start;
+}
+
+.calendar-card,
+.calendar-detail-card {
+    background: white;
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+.calendar-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.calendar-nav h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #222;
+}
+
+.cal-nav-btn {
+    background: #f0f4f0;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #2d6a4f;
+    font-weight: 700;
+    transition: background 0.2s;
+}
+
+.cal-nav-btn:hover {
+    background: #d8f3dc;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+}
+
+.cal-day-header {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: #aaa;
+    text-transform: uppercase;
+    padding-bottom: 8px;
+}
+
+.cal-day {
+    aspect-ratio: 1;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.2s;
+    border: 2px solid transparent;
+}
+
+.cal-day:not(.empty):hover {
+    background: #f0f4f0;
+}
+
+.cal-day.empty {
+    cursor: default;
+}
+
+.cal-day.today {
+    border-color: #2d6a4f;
+}
+
+.cal-day.today .cal-day-number {
+    color: #2d6a4f;
+    font-weight: 700;
+}
+
+.cal-day.selected {
+    background: #2d6a4f;
+}
+
+.cal-day.selected .cal-day-number {
+    color: white;
+}
+
+.cal-day.selected .cal-dot {
+    background: white;
+}
+
+.cal-day-number {
+    font-size: 14px;
+    color: #333;
+}
+
+.cal-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #2d6a4f;
+    margin-top: 3px;
+}
+
+.calendar-detail-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 16px;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+    .calendar-layout {
+        grid-template-columns: 1fr;
+    }
+}
