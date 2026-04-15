@@ -14,4 +14,4 @@ Nutrition X is an app that uses the Spoonacular free API to help users discover 
 
 
 ## Deployed Application
-add link in here later
+[Nutrition X](https://nutritionx.onrender.com/)
